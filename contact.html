@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NGWA DAVILA LUM | Academic Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script>
+    function toggleForm() {
+      const form = document.querySelector("form");
+      form.classList.toggle("show");
+    }
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTop");
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    }
+    function validateEmail(input) {
+      const email = input.value;
+      const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!pattern.test(email)) {
+        input.setCustomValidity("Please enter a valid email address.");
+      } else {
+        input.setCustomValidity("");
+      }
+    }
+    function showSuccessMessage() {
+      const success = document.getElementById("successMessage");
+      success.style.display = "block";
+      setTimeout(() => success.style.display = "none", 4000);
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>NGWA DAVILA LUM</h1>
+    <p>UI/UX Designer | Web Developer</p>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="index.html">About Me</a>
+      <a href="skill.html">Skills</a>
+      <a href="project.html">Project</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section>
+      <div class="placeholder-img"></div>
+      <h2>Contact Me</h2>
+      <p>If you'd like to connect with me, please fill out the form below.</p>
+      <a href="assets/NgwaDavilaLum.docx" class="download-btn" download>Download My CV</a>
+      <form action="https://formsubmit.co/ngwadavila@gmail.com" method="POST" onsubmit="showSuccessMessage()">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" oninput="validateEmail(this)" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY_HERE"></div>
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="successMessage" class="success-message">Message sent successfully!</p>
+    </section>
+  </div>
+
+  <div class="social-icons">
+    <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook fa-1x"></i></a>
+    <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-1x"></i></a>
+    <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter fa-1x"></i></a>
+    <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github fa-1x"></i></a>
+    <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube fa-1x"></i></a>
+    <a href="https://tiktok.com" target="_blank" title="TikTok"><i class="fab fa-tiktok fa-1x"></i></a>
+  </div>
+
+ <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+
+ <footer> ngwa davila lum &copy; 2025. All rights reserved</footer>
+</body>
+
+</html>
