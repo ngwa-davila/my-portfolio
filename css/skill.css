@@ -84,11 +84,11 @@
     color: #fff;
   }
   
-  .skills-heading span {
+  /* .skills-heading span {
     opacity: 0;
     animation: typeIn 0.1s forwards;
     animation-delay: calc(var(--i) * 0.1s);
-  }
+  } */
   
   /* Typing animation */
   @keyframes typeIn {
